@@ -5,10 +5,12 @@ class Message extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            newMessage: 'Нормально'
+            newMessage: 'Нормально',
+            arr: []
         };
+        
     }
-    addMessage() {
+    addMessage = () => {
         const message = document.createElement('div');
         message.textContent = this.state.newMessage;
         document.body.append(message);
@@ -16,7 +18,7 @@ class Message extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.addMessage()}>Добавить сообщение</button>
+                <button onClick={this.addMessage}>Добавить сообщение</button>
             </div>
         )
     }
