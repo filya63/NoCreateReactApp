@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Message = () => {
-    return (
-        <div>
-            Hello, React!
-        </div>
-    )
+class Message extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            newMessage: 'Нормально'
+        };
+    }
+    addMessage() {
+        const message = document.createElement('div');
+        message.textContent = this.state.newMessage;
+        document.body.append(message);
+    }
+    render() {
+        return (
+            <div>
+                <button onClick={() => this.addMessage()}>Добавить сообщение</button>
+            </div>
+        )
+    }
 }
 
 ReactDOM.render(
-    <Message />,
+    <Message/>,
     document.getElementById('root')
 );
