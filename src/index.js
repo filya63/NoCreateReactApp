@@ -5,26 +5,33 @@ class Message extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            newMessage: 'Нормально',
-            arr: []
+            arrMessage: ['Bottom', 'Top']
         };
-        
     }
     addMessage = () => {
-        const message = document.createElement('div');
-        message.textContent = this.state.newMessage;
-        document.body.append(message);
+        console.log('addNewMessage');
+        this.setState(this.state, () => {
+            this.state.arrMessage.push('Left');
+        })
     }
     render() {
         return (
-            <div>
-                <button onClick={this.addMessage}>Добавить сообщение</button>
-            </div>
+            <React.Fragment>
+                <ul>
+                    {
+                        this.state.arrMessage.map((msg, id) => {
+                            return <li key={id}>{msg}</li>
+                        })
+                    }
+                </ul>
+                <button onClick={this.addMessage}>ADD MESSAGE</button>
+            </React.Fragment>
         )
     }
 }
 
 ReactDOM.render(
-    <Message/>,
+    <Message/>
+    ,
     document.getElementById('root')
 );
