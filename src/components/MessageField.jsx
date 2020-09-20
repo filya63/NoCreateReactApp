@@ -26,7 +26,7 @@ class MessageField extends React.Component {
         if (this.props.messages.length !== prevProps.messages.length) {
             this.setState({messages: [...this.state.messages, {id: uuid(), text: 'А еще что-нибудь расскажи', author: 'Bot'}]});
         }
-    } */
+    }  */
     render = () => {
         const { messages, newTextMessage } = this.state;
         return (
