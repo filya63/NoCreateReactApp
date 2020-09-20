@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MessageField from './components/MessageField.jsx';
 
-class Message extends React.Component {
+/* class Message extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,10 +10,9 @@ class Message extends React.Component {
         };
     }
     addMessage = () => {
-        console.log('addNewMessage');
-        this.setState(this.state, () => {
-            this.state.arrMessage.push('Left');
-        })
+        this.setState(({arrMessage}) => {
+            return {arrMessage: [...arrMessage, 'новое сообщение']}
+        });
     }
     render() {
         return (
@@ -28,10 +28,10 @@ class Message extends React.Component {
             </React.Fragment>
         )
     }
-}
+} */
 
 ReactDOM.render(
-    <Message/>
+    <MessageField/>
     ,
     document.getElementById('root')
 );

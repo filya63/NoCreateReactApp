@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+
 module.exports = {
     entry: {
         app: './src/index.js' // входной файл для сборщика
@@ -22,7 +23,7 @@ module.exports = {
                 plugins: ["@babel/plugin-proposal-class-properties"] // для использования стрелочных функций в классовой компоненте
                 }
             }
-            }
+            },
         ],
     },
     devServer: {
